@@ -72,11 +72,12 @@ export class DashboardPage {
     console.log('ionViewDidLoad DashboardPage');
     this.Canvas1=new Chart(this.Canvas1.nativeElement,{data:this.data1,type:'line'});
     this.Canvas0=new Chart(this.Canvas0.nativeElement,{data:this.data0,type:'pie'});
-    this.auth.getAuthenticatedUser().getToken().then((Token)=>{
+    this.auth.getAuthenticatedUser().getIdToken().then((Token)=>{
         this.datam.DLUserBasicInfo(Token).subscribe((data)=>{
              l.dismiss();
              this.userBasicInfo=this.datam.getUserBasicInof();
         },(err)=>{
+          console.log(err);
           l.dismiss();
           const a = this.alertc.create({
             title:"Server ERROR0",

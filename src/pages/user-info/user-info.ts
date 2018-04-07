@@ -57,7 +57,7 @@ export class UserInfoPage {
       content:"Submitting!"
     })
     l.present();
-    this.auth.getAuthenticatedUser().getToken().then((token)=>{
+    this.auth.getAuthenticatedUser().getIdToken().then((token)=>{
             l.dismiss();
             this.datam.UPUserBasicInfo(token).subscribe(()=>{
               const alert =this.alertc.create({
@@ -66,7 +66,7 @@ export class UserInfoPage {
               });
               alert.present();
             },(err)=>{
-              console.log(err.message);
+              console.log(err);
               const alert = this.alertc.create({
                 title:"Submission Failure!",
                 message:err.message,
