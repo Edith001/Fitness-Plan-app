@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Platform,NavController} from 'ionic-angular';
+import { Platform,NavController, MenuController} from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import firebase from 'firebase';
@@ -7,7 +7,6 @@ import { HomePage } from '../pages/home/home';
 import { SigninPage } from "../pages/signin/signin";
 import { SignupPage } from "../pages/signup/signup";
 import { AuthService } from "../services/auth";
-import { MenuController} from 'ionic-angular'
 @Component({
   templateUrl: 'app.html'
 })
@@ -16,10 +15,11 @@ export class MyApp {
   signinPage = SigninPage;
   signupPage = SignupPage;
   isAuthenticated = false;
-  @ViewChild('nav')nav: NavController;
+  @ViewChild('nav') nav: NavController;
 
-  constructor(platform: Platform, private authService: AuthService,
-    statusBar: StatusBar, splashScreen: SplashScreen,private menuController:MenuController) {
+
+  constructor(platform: Platform, private authService: AuthService,private menuCtrl: MenuController,
+    statusBar: StatusBar, splashScreen: SplashScreen) {
       firebase.initializeApp({
         apiKey: "AIzaSyCvF4uhrtr4fK0q8fKfldDth9dr0257x18",
             authDomain: "gymapp-7ab3c.firebaseapp.com",
@@ -45,12 +45,14 @@ firebase.auth().onAuthStateChanged(user => {
       splashScreen.hide();
     });
   }
-
-  onLoad(page: any) {
-    this.nav.setRoot(page);
-    this.menuController.close();
-  }
-
+onLoad(page: any) {
+  this.nav.setRoot(page);
+  this.menuCtrl.close();
 }
 
-
+onLogout() {
+  this.authService.logout();
+  this.menuCtrl.close();
+  this.nav.setRoot(SigninPage);
+}
+}
