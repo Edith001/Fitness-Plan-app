@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { Platform,NavController} from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { Platform,NavController, MenuController} from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import firebase from 'firebase'
@@ -16,9 +16,10 @@ export class MyApp {
   signinPage = SigninPage;
   signupPage = SignupPage;
   isAuthenticated = false;
+  @ViewChild('nav') nav: NavController;
 
 
-  constructor(platform: Platform, private authService: AuthService,
+  constructor(platform: Platform, private authService: AuthService,private menuCtrl: MenuController,
     statusBar: StatusBar, splashScreen: SplashScreen) {
       firebase.initializeApp({
         apiKey: "AIzaSyCvF4uhrtr4fK0q8fKfldDth9dr0257x18",
@@ -40,4 +41,14 @@ firebase.auth().onAuthStateChanged(user => {
       splashScreen.hide();
     });
   }
+onLoad(page: any) {
+  this.nav.setRoot(page);
+  this.menuCtrl.close();
+}
+
+onLogout() {
+  this.authService.logout();
+  this.menuCtrl.close();
+  this.nav.setRoot(SigninPage);
+}
 }
