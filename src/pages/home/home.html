@@ -1,13 +1,21 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Your Fitness Home
     </ion-title>
+    <ion-buttons start>
+        <button ion-button icon-only menuToggle>
+      <ion-icon name="menu" style="zoom:1.2"></ion-icon>
+       </button>
+      </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
     <button ion-button (click) = "addInfo()">
       add info
+    </button>
+    <button ion-button (click)= "gotoGraph()">
+     goto graph
     </button>
 </ion-content>

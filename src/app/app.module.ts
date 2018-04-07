@@ -7,23 +7,25 @@ import { UserInfoPage} from '../pages/user-info/user-info'
 import { SigninPage } from "../pages/signin/signin";
 import { SignupPage } from "../pages/signup/signup";
 import { AuthService } from "../services/auth";
-import { TabsPage } from "../pages/tabs/tabs";
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-
+import {DashboardPage} from '../pages/dashboard/dashboard'
+import { HttpModule } from '@angular/http';
+import { DataManager } from '../services/dataManager';
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    TabsPage,
     UserInfoPage,
     SigninPage,
-    SignupPage
+    SignupPage,
+    DashboardPage
 
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -33,13 +35,14 @@ import { HomePage } from '../pages/home/home';
     UserInfoPage,
     SigninPage,
     SignupPage,
-    TabsPage
+    DashboardPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthService,
+    DataManager,
   ]
 })
 export class AppModule {}

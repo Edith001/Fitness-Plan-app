@@ -12,5 +12,8 @@ export class AuthService {
   logout() {
     firebase.auth().signOut();
   }
+  getAuthenticatedUser(){
+    return firebase.auth().currentUser;
+  }
 
 }
