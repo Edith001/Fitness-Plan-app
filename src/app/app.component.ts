@@ -22,7 +22,12 @@ export class MyApp {
     statusBar: StatusBar, splashScreen: SplashScreen,private menuController:MenuController) {
       firebase.initializeApp({
         apiKey: "AIzaSyCvF4uhrtr4fK0q8fKfldDth9dr0257x18",
-            authDomain: "gymapp-7ab3c.firebaseapp.com"
+            authDomain: "gymapp-7ab3c.firebaseapp.com",
+            databaseURL: "https://gymapp-7ab3c.firebaseio.com",
+    projectId: "gymapp-7ab3c",
+    storageBucket: "gymapp-7ab3c.appspot.com",
+    messagingSenderId: "857607056717"
+
 });
 firebase.auth().onAuthStateChanged(user => {
   if (user) {
