@@ -66,6 +66,7 @@ export class UserInfoPage {
               });
               alert.present();
             },(err)=>{
+              console.log(err.message);
               const alert = this.alertc.create({
                 title:"Submission Failure!",
                 message:err.message,

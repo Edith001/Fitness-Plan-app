@@ -12,7 +12,6 @@ import { HomePage } from '../pages/home/home';
 import {DashboardPage} from '../pages/dashboard/dashboard'
 import { HttpModule } from '@angular/http';
 import { DataManager } from '../services/dataManager';
-
 @NgModule({
   declarations: [
     MyApp,
