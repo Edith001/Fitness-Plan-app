@@ -10,7 +10,7 @@ export class DataManager{
     }
     DLUserBasicInfo(token:string){
         const userId = this.auth.getAuthenticatedUser().uid;
-        return this.http.get("https://gymapp-7ab3c.firebaseio.com"+userId+"userbasic.json?auth="+token).map((response: Response)=>{
+        return this.http.get("https://gymapp-7ab3c.firebaseio.com/"+userId+"/userbasic.json?auth="+token).map((response: Response)=>{
             return response.json();}).do((data)=>{
                 this.userBasicInfo=data;
             });
@@ -36,7 +36,7 @@ export class DataManager{
     UPUserBasicInfo(token:string){
         let t = this.userBasicInfo;
         const userId = this.auth.getAuthenticatedUser().uid;
-        return this.http.put("https://gymapp-7ab3c.firebaseio.com"+userId+"userbasic.json?auth="+token,t).map((response:Response)=>{
+        return this.http.put("https://gymapp-7ab3c.firebaseio.com/"+userId+"/userbasic.json?auth="+token,t).map((response:Response)=>{
             return response.json();
         });
     }

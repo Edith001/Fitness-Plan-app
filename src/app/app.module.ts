@@ -12,6 +12,7 @@ import { HomePage } from '../pages/home/home';
 import {DashboardPage} from '../pages/dashboard/dashboard'
 import { HttpModule } from '@angular/http';
 import { DataManager } from '../services/dataManager';
+import { PlanPage} from '../pages/plan/plan'
 @NgModule({
   declarations: [
     MyApp,
@@ -19,7 +20,8 @@ import { DataManager } from '../services/dataManager';
     UserInfoPage,
     SigninPage,
     SignupPage,
-    DashboardPage
+    DashboardPage,
+    PlanPage
 
   ],
   imports: [
@@ -35,14 +37,15 @@ import { DataManager } from '../services/dataManager';
     UserInfoPage,
     SigninPage,
     SignupPage,
-    DashboardPage
+    DashboardPage,
+    PlanPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthService,
-    DataManager,
+    DataManager
   ]
 })
 export class AppModule {}

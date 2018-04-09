@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { UserInfoPage } from '../user-info/user-info'
 import {DashboardPage} from '../dashboard/dashboard'
+import {PlanPage} from "../plan/plan";
 
 @Component({
   selector: 'page-home',
@@ -17,5 +18,8 @@ export class HomePage {
   }
   gotoGraph(){
     this.navCtrl.push(DashboardPage);
+  }
+  trainPlan(){
+    this.navCtrl.push(PlanPage);
   }
 }
