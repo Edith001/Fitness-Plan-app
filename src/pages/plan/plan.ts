@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Http } from '@angular/http';
-import 'rxjs/add/operator/map'
+import 'rxjs/add/operator/map';
+import {DetailPage} from '../detail/detail';
 
 @Component({
   selector: 'page-plan',
@@ -24,5 +25,7 @@ export class PlanPage {
   toggleItem(i, j) {
     this.information[i].children[j].open = !this.information[i].children[j].open;
   }
-
+  gotoDetail(item:any){
+    this.navCtrl.push(DetailPage,item);
+  }
 }
