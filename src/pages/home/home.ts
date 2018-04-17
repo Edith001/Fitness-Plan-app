@@ -15,10 +15,19 @@ export class HomePage {
   isCoach:boolean=false;
   isStudent:boolean=false;
   UserId:any;
+  exercise=[];
 
   constructor(public navCtrl: NavController,private auth: AuthService) {
     this.UserId=this.auth.getAuthenticatedUser().uid;
-  
+    // firebase.database().ref('/exercise').child('bob').set({
+    //   hg:"name",
+    //   tg:"namm"
+    // });
+    firebase.database().ref('/exercise').once('value').then((snapshot)=>{
+      const a = snapshot.val();
+      Object.keys(a).map(key=>{this.exercise.push(a[key])});
+      console.log(this.exercise);
+    })
     firebase.database().ref('/' + this.UserId).once('value').then((snapshot)=>{
       if(snapshot.val()){
       if(snapshot.val().userbasic.isCoach=="true"){
@@ -42,15 +51,15 @@ export class HomePage {
     const userRef = firebase.database().ref('/' + this.UserId);
     userRef.on('value',(snapshot)=>{
       if(snapshot.val()){
-        console.log(snapshot.val().userbasic.isCoach);
+        //console.log(snapshot.val().userbasic.isCoach);
         if(snapshot.val().userbasic.isCoach=="true"){
             console.log(snapshot.val().userbasic.isCoach);
             console.log("three")
               this.isCoach=true;
               this.isStudent=false;
           }else{
-            console.log(snapshot.val().userbasic.isCoach);
-            console.log("four")
+            //console.log(snapshot.val().userbasic.isCoach);
+            //console.log("four")
               this.isStudent=true;
               this.isCoach=false;
           }

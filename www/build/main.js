@@ -757,7 +757,17 @@ var HomePage = /** @class */ (function () {
         this.auth = auth;
         this.isCoach = false;
         this.isStudent = false;
+        this.exercise = [];
         this.UserId = this.auth.getAuthenticatedUser().uid;
+        // firebase.database().ref('/exercise').child('bob').set({
+        //   hg:"name",
+        //   tg:"namm"
+        // });
+        __WEBPACK_IMPORTED_MODULE_6_firebase___default.a.database().ref('/exercise').once('value').then(function (snapshot) {
+            var a = snapshot.val();
+            Object.keys(a).map(function (key) { _this.exercise.push(a[key]); });
+            console.log(_this.exercise);
+        });
         __WEBPACK_IMPORTED_MODULE_6_firebase___default.a.database().ref('/' + this.UserId).once('value').then(function (snapshot) {
             if (snapshot.val()) {
                 if (snapshot.val().userbasic.isCoach == "true") {
@@ -783,7 +793,7 @@ var HomePage = /** @class */ (function () {
         var userRef = __WEBPACK_IMPORTED_MODULE_6_firebase___default.a.database().ref('/' + this.UserId);
         userRef.on('value', function (snapshot) {
             if (snapshot.val()) {
-                console.log(snapshot.val().userbasic.isCoach);
+                //console.log(snapshot.val().userbasic.isCoach);
                 if (snapshot.val().userbasic.isCoach == "true") {
                     console.log(snapshot.val().userbasic.isCoach);
                     console.log("three");
@@ -791,8 +801,8 @@ var HomePage = /** @class */ (function () {
                     _this.isStudent = false;
                 }
                 else {
-                    console.log(snapshot.val().userbasic.isCoach);
-                    console.log("four");
+                    //console.log(snapshot.val().userbasic.isCoach);
+                    //console.log("four")
                     _this.isStudent = true;
                     _this.isCoach = false;
                 }
@@ -815,7 +825,7 @@ var HomePage = /** @class */ (function () {
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"/Users/yanfengyao/projects/gittest/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Your Fitness Home\n    </ion-title>\n    <ion-buttons start>\n        <button ion-button icon-only menuToggle>\n      <ion-icon name="menu" style="zoom:1.2"></ion-icon>\n       </button>\n      </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <button ion-button (click) = "addInfo()">\n      add info\n    </button>\n    <button ion-button (click)= "gotoGraph()">\n     goto graph\n    </button>\n    <button ion-button (click) = "trainPlan()">\n      training plan\n    </button>\n    <button ion-button *ngIf="isCoach">\n     Your Student\n    </button>\n    <button ion-button *ngIf="isStudent">\n     select a coach\n    </button>\n\n</ion-content>\n'/*ion-inline-end:"/Users/yanfengyao/projects/gittest/src/pages/home/home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"/Users/yanfengyao/projects/gittest/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Your Fitness Home\n    </ion-title>\n    <ion-buttons start>\n        <button ion-button icon-only menuToggle>\n      <ion-icon name="menu" style="zoom:1.2"></ion-icon>\n       </button>\n      </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <button ion-button (click) = "addInfo()">\n      add info\n    </button>\n    <button ion-button (click)= "gotoGraph()">\n     goto graph\n    </button>\n    <button ion-button (click) = "trainPlan()">\n      training plan\n    </button>\n    <button ion-button *ngIf="isCoach">\n     Your Student\n    </button>\n    <button ion-button *ngIf="isStudent">\n     select a coach\n    </button>\n    <ion-list>\n    <ion-item *ngFor=\'let item of exercise\'>\n      {{item}}\n    </ion-item>\n    </ion-list>\n\n</ion-content>\n'/*ion-inline-end:"/Users/yanfengyao/projects/gittest/src/pages/home/home.html"*/
         }),
         __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_5__services_auth__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__services_auth__["a" /* AuthService */]) === "function" && _b || Object])
     ], HomePage);
