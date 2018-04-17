@@ -1,4 +1,4 @@
-webpackJsonp([3],{
+webpackJsonp([5],{
 
 /***/ 1027:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -181,7 +181,7 @@ var DataManager = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(150);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(470);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__detail_detail__ = __webpack_require__(201);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__detail_detail__ = __webpack_require__(202);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -229,54 +229,6 @@ var PlanPage = /** @class */ (function () {
 /***/ }),
 
 /***/ 201:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DetailPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-/**
- * Generated class for the DetailPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var DetailPage = /** @class */ (function () {
-    function DetailPage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.item = this.navParams.data;
-    }
-    DetailPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad DetailPage');
-    };
-    DetailPage.prototype.update = function () {
-    };
-    DetailPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-detail',template:/*ion-inline-start:"/Users/xiaoyisun/Desktop/app development/gittest/src/pages/detail/detail.html"*/'<!--\n  Generated template for the DetailPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>{{item.name}}</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-list>\n      <ion-item>\n        <ion-col>\n        Your Accomplishment\n        </ion-col>\n        <ion-col>\n        {{Accomplishment}}\n        </ion-col>\n      </ion-item>\n      <ion-item (click)="update()">\n          <ion-range min="20" max="80" step="2" [(ngModel)]="Accomplishment">\n            <ion-icon small range-left name="bicycle"></ion-icon>\n            <ion-icon range-right name="bicycle"></ion-icon>\n          </ion-range>\n        </ion-item>       \n  </ion-list>\n  <ion-card>\n    <ion-card-header>\n      Discription\n    </ion-card-header>\n    <ion-card-content>\n      {{item.information}}\n    </ion-card-content>\n  </ion-card>\n\n</ion-content>\n'/*ion-inline-end:"/Users/xiaoyisun/Desktop/app development/gittest/src/pages/detail/detail.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
-    ], DetailPage);
-    return DetailPage;
-}());
-
-//# sourceMappingURL=detail.js.map
-
-/***/ }),
-
-/***/ 202:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -412,6 +364,54 @@ var DashboardPage = /** @class */ (function () {
 
 /***/ }),
 
+/***/ 202:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DetailPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the DetailPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var DetailPage = /** @class */ (function () {
+    function DetailPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.item = this.navParams.data;
+    }
+    DetailPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad DetailPage');
+    };
+    DetailPage.prototype.update = function () {
+    };
+    DetailPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-detail',template:/*ion-inline-start:"/Users/xiaoyisun/Desktop/app development/gittest/src/pages/detail/detail.html"*/'<!--\n  Generated template for the DetailPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>{{item.name}}</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-list>\n      <ion-item>\n        <ion-col>\n        Your Accomplishment\n        </ion-col>\n        <ion-col>\n        {{Accomplishment}}\n        </ion-col>\n      </ion-item>\n      <ion-item (click)="update()">\n          <ion-range min="20" max="80" step="2" [(ngModel)]="Accomplishment">\n            <ion-icon small range-left name="bicycle"></ion-icon>\n            <ion-icon range-right name="bicycle"></ion-icon>\n          </ion-range>\n        </ion-item>       \n  </ion-list>\n  <ion-card>\n    <ion-card-header>\n      Discription\n    </ion-card-header>\n    <ion-card-content>\n      {{item.information}}\n    </ion-card-content>\n  </ion-card>\n\n</ion-content>\n'/*ion-inline-end:"/Users/xiaoyisun/Desktop/app development/gittest/src/pages/detail/detail.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
+    ], DetailPage);
+    return DetailPage;
+}());
+
+//# sourceMappingURL=detail.js.map
+
+/***/ }),
+
 /***/ 203:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -537,17 +537,25 @@ webpackEmptyAsyncContext.id = 214;
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"../pages/dashboard/dashboard.module": [
-		1029,
-		2
-	],
-	"../pages/detail/detail.module": [
+	"../pages/coach-dt/coach-dt.module": [
 		1028,
 		1
 	],
-	"../pages/user-info/user-info.module": [
-		1030,
+	"../pages/coach/coach.module": [
+		1029,
 		0
+	],
+	"../pages/dashboard/dashboard.module": [
+		1030,
+		4
+	],
+	"../pages/detail/detail.module": [
+		1031,
+		3
+	],
+	"../pages/user-info/user-info.module": [
+		1032,
+		2
 	]
 };
 function webpackAsyncContext(req) {
@@ -696,7 +704,7 @@ var SignupPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__user_info_user_info__ = __webpack_require__(203);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__dashboard_dashboard__ = __webpack_require__(202);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__dashboard_dashboard__ = __webpack_require__(201);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__plan_plan__ = __webpack_require__(200);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -798,11 +806,11 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_auth__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__app_component__ = __webpack_require__(1027);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_home_home__ = __webpack_require__(569);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_dashboard_dashboard__ = __webpack_require__(202);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_dashboard_dashboard__ = __webpack_require__(201);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__angular_http__ = __webpack_require__(150);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__services_dataManager__ = __webpack_require__(149);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_plan_plan__ = __webpack_require__(200);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_detail_detail__ = __webpack_require__(201);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_detail_detail__ = __webpack_require__(202);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -844,8 +852,10 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* MyApp */], {}, {
                     links: [
-                        { loadChildren: '../pages/detail/detail.module#DetailPageModule', name: 'DetailPage', segment: 'detail', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/coach-dt/coach-dt.module#CoachDtPageModule', name: 'CoachDtPage', segment: 'coach-dt', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/coach/coach.module#CoachPageModule', name: 'CoachPage', segment: 'coach', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/dashboard/dashboard.module#DashboardPageModule', name: 'DashboardPage', segment: 'dashboard', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/detail/detail.module#DetailPageModule', name: 'DetailPage', segment: 'detail', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/user-info/user-info.module#UserInfoPageModule', name: 'UserInfoPage', segment: 'user-info', priority: 'low', defaultHistory: [] }
                     ]
                 }),
