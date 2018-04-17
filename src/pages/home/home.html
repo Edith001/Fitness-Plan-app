@@ -21,4 +21,11 @@
     <button ion-button (click) = "trainPlan()">
       training plan
     </button>
+    <button ion-button *ngIf="isCoach">
+     Your Student
+    </button>
+    <button ion-button *ngIf="isStudent">
+     select a coach
+    </button>
+
 </ion-content>

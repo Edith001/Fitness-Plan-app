@@ -29,6 +29,7 @@ export class DataManager{
                 weight:0,
                 traininghistory:false,
                 professional:false,
+                isCoach:false,
               }
         }
         return this.userBasicInfo;

@@ -3,15 +3,63 @@ import { NavController } from 'ionic-angular';
 import { UserInfoPage } from '../user-info/user-info'
 import {DashboardPage} from '../dashboard/dashboard'
 import {PlanPage} from "../plan/plan";
+import { AuthService } from '../../services/auth';
+import firebase from 'firebase'
+
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
+  isCoach:boolean=false;
+  isStudent:boolean=false;
+  UserId:any;
 
-  constructor(public navCtrl: NavController) {
-
+  constructor(public navCtrl: NavController,private auth: AuthService) {
+    this.UserId=this.auth.getAuthenticatedUser().uid;
+  
+    firebase.database().ref('/' + this.UserId).once('value').then((snapshot)=>{
+      if(snapshot.val()){
+      if(snapshot.val().userbasic.isCoach=="true"){
+          //console.log("one");
+            this.isCoach=true;
+            this.isStudent=false;
+        }else{
+          //console.log("two");
+            this.isStudent=true;
+            this.isCoach=false;
+        }
+      }else{
+        this.isCoach=false;
+        this.isStudent=false;
+      }
+      //console.log("isCoach"+":"+this.isCoach);
+    
+    });
+  }
+  ionViewDidEnter(){
+    const userRef = firebase.database().ref('/' + this.UserId);
+    userRef.on('value',(snapshot)=>{
+      if(snapshot.val()){
+        console.log(snapshot.val().userbasic.isCoach);
+        if(snapshot.val().userbasic.isCoach=="true"){
+            console.log(snapshot.val().userbasic.isCoach);
+            console.log("three")
+              this.isCoach=true;
+              this.isStudent=false;
+          }else{
+            console.log(snapshot.val().userbasic.isCoach);
+            console.log("four")
+              this.isStudent=true;
+              this.isCoach=false;
+          }
+        }else{
+          this.isCoach=false;
+          this.isStudent=false;
+        }
+        //console.log(this.UserId+":"+this.isCoach);
+    });
   }
   addInfo(){
     this.navCtrl.push(UserInfoPage);
