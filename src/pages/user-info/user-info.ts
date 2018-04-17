@@ -5,6 +5,7 @@ import { AuthService } from '../../services/auth';
 import { AlertController} from 'ionic-angular';
 import { LoadingController} from 'ionic-angular';
 import { messaging } from 'firebase';
+import firebase from 'firebase';
 
 /**
  * Generated class for the UserInfoPage page.
@@ -34,6 +35,7 @@ export class UserInfoPage {
   weight:number;
   traininghistory:boolean;
   professional:boolean;
+  isCoach:boolean;
   ionViewDidLoad() {
     console.log('ionViewDidLoad UserInfoPage');
   }
@@ -52,6 +54,7 @@ export class UserInfoPage {
          weight:this.weight,
          traininghistory:this.traininghistory,
          professional:this.professional,
+         isCoach:this.isCoach,
     });
     const l = this.loadc.create({
       content:"Submitting!"

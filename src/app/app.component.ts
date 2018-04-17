@@ -12,6 +12,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { HttpModule } from '@angular/http';
 import { PlanPage } from "../pages/plan/plan";
+import { CoachPage } from "../pages/coach/coach";
 
 
 @Component({

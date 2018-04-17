@@ -15,15 +15,15 @@
 
 <ion-content padding>
   <ion-list>
-    <button ion-button (click) = "coach1detail()">
-      Coach1
-    </button>
-    <button ion-button (click)= "coach1detail()">
-     coach2
-    </button>
-    <button ion-button (click) = "coach1detail()">
-      coach3
-    </button>
+    <ion-item-sliding *ngFor='let item of coaches'>
+      <ion-item>
+        {{item}}
+      </ion-item>
 
+    <ion-item-options>
+      <button (click)="coachdetail(item)"> Details</button>
+    </ion-item-options>
+  </ion-item-sliding>
 
+  </ion-list>
 </ion-content>

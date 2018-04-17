@@ -34,6 +34,7 @@ export class DashboardPage {
         weight:0,
         traininghistory:false,
         professional:false,
+        isCoach:false
       };
   constructor(public navCtrl: NavController, public navParams: NavParams,
   private datam:DataManager,private auth:AuthService,

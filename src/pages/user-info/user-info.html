@@ -83,6 +83,17 @@
           <ion-option value=false>No</ion-option>
         </ion-select>
     </ion-item>
+    <ion-item>
+      <ion-label color="Primary">Are you a coach?</ion-label>
+      <ion-select [(ngModel)]="isCoach">
+        <ion-option value="true">
+         Yes
+        </ion-option>
+        <ion-option value="false">
+          No
+        </ion-option>
+      </ion-select>
+    </ion-item>
     <button ion-button round full (click)="submitBasicInfo()">
       Submit
     </button>
