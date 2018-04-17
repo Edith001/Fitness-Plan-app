@@ -16,6 +16,7 @@ export class HomePage {
   isStudent:boolean=false;
   UserId:any;
   exercise=[];
+  coaches=[];
 
   constructor(public navCtrl: NavController,private auth: AuthService) {
     this.UserId=this.auth.getAuthenticatedUser().uid;
@@ -23,11 +24,16 @@ export class HomePage {
     //   hg:"name",
     //   tg:"namm"
     // });
+    firebase.database().ref('/coaches').once('value').then((snapshot)=>{
+      const a = snapshot.val();
+      Object.keys(a).map(key=>{this.coaches.push(key)});
+      console.log(this.coaches);
+    });
     firebase.database().ref('/exercise').once('value').then((snapshot)=>{
       const a = snapshot.val();
       Object.keys(a).map(key=>{this.exercise.push(a[key])});
-      console.log(this.exercise);
-    })
+      //console.log(this.exercise);
+    });
     firebase.database().ref('/' + this.UserId).once('value').then((snapshot)=>{
       if(snapshot.val()){
       if(snapshot.val().userbasic.isCoach=="true"){

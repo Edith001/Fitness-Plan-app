@@ -62,6 +62,9 @@ export class UserInfoPage {
     l.present();
     this.auth.getAuthenticatedUser().getIdToken().then((token)=>{
             l.dismiss();
+            if(this.isCoach){
+              firebase.database().ref("/coaches").child(this.lname).set([""]);
+            }
             this.datam.UPUserBasicInfo(token).subscribe(()=>{
               const alert =this.alertc.create({
                 title:"Submit Successful!",
