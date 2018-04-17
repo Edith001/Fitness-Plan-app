@@ -14,6 +14,8 @@ import { HttpModule } from '@angular/http';
 import { DataManager } from '../services/dataManager';
 import { PlanPage} from '../pages/plan/plan';
 import { DetailPage } from '../pages/detail/detail';
+import { CoachPage} from '../pages/coach/coach';
+import { StudentPage} from '../pages/student/student';
 @NgModule({
   declarations: [
     MyApp,
@@ -23,7 +25,9 @@ import { DetailPage } from '../pages/detail/detail';
     SignupPage,
     DashboardPage,
     PlanPage,
-    DetailPage
+    DetailPage,
+    CoachPage,
+    StudentPage
 
   ],
   imports: [
@@ -41,7 +45,9 @@ import { DetailPage } from '../pages/detail/detail';
     SignupPage,
     DashboardPage,
     PlanPage,
-    DetailPage
+    DetailPage,
+    CoachPage,
+    StudentPage
   ],
   providers: [
     StatusBar,

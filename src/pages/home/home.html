@@ -21,13 +21,13 @@
     <button ion-button (click) = "trainPlan()">
       training plan
     </button>
-    <button ion-button *ngIf="isCoach">
+    <button ion-button *ngIf="isCoach" (click) = 'Student()'>
      Your Student
     </button>
-    <button ion-button *ngIf="isStudent">
+    <button ion-button *ngIf="isStudent" (click) = "Coach()">
      select a coach
     </button>
-    <ion-list>
+    <!-- <ion-list>
     <ion-item *ngFor='let item of exercise'>
       {{item}}
     </ion-item>
@@ -36,5 +36,5 @@
       <ion-item *ngFor='let item of coaches'>
        {{item}}
     </ion-item>
-  </ion-list>
+  </ion-list> -->
 </ion-content>

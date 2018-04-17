@@ -4,6 +4,8 @@ import { UserInfoPage } from '../user-info/user-info'
 import {DashboardPage} from '../dashboard/dashboard'
 import {PlanPage} from "../plan/plan";
 import { AuthService } from '../../services/auth';
+import {CoachPage} from "../coach/coach";
+import {StudentPage} from "../student/student";
 import firebase from 'firebase'
 
 
@@ -15,8 +17,6 @@ export class HomePage {
   isCoach:boolean=false;
   isStudent:boolean=false;
   UserId:any;
-  exercise=[];
-  coaches=[];
 
   constructor(public navCtrl: NavController,private auth: AuthService) {
     this.UserId=this.auth.getAuthenticatedUser().uid;
@@ -24,16 +24,16 @@ export class HomePage {
     //   hg:"name",
     //   tg:"namm"
     // });
-    firebase.database().ref('/coaches').once('value').then((snapshot)=>{
-      const a = snapshot.val();
-      Object.keys(a).map(key=>{this.coaches.push(key)});
-      console.log(this.coaches);
-    });
-    firebase.database().ref('/exercise').once('value').then((snapshot)=>{
-      const a = snapshot.val();
-      Object.keys(a).map(key=>{this.exercise.push(a[key])});
+    // firebase.database().ref('/coaches').once('value').then((snapshot)=>{
+    //   const a = snapshot.val();
+    //   Object.keys(a).map(key=>{this.coaches.push(key)});
+    //   console.log(this.coaches);
+    // });
+    // firebase.database().ref('/exercise').once('value').then((snapshot)=>{
+    //   const a = snapshot.val();
+    //   Object.keys(a).map(key=>{this.exercise.push(a[key])});
       //console.log(this.exercise);
-    });
+    //});
     firebase.database().ref('/' + this.UserId).once('value').then((snapshot)=>{
       if(snapshot.val()){
       if(snapshot.val().userbasic.isCoach=="true"){
@@ -50,7 +50,7 @@ export class HomePage {
         this.isStudent=false;
       }
       //console.log("isCoach"+":"+this.isCoach);
-    
+
     });
   }
   ionViewDidEnter(){
@@ -84,5 +84,11 @@ export class HomePage {
   }
   trainPlan(){
     this.navCtrl.push(PlanPage);
+  }
+  Coach(){
+    this.navCtrl.push(CoachPage);
+  }
+  Student(){
+    this.navCtrl.push(StudentPage);
   }
 }
