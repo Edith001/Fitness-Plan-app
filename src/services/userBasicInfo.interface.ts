@@ -9,5 +9,5 @@ export interface UserBasicInfo{
   weight:number,
   traininghistory:boolean,
   professional:boolean,
-  isCoach:boolean
+  isCoach:boolean,
 }
