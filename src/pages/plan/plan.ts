@@ -151,6 +151,27 @@ export class PlanPage {
     console.log(item0);
     console.log(child);
     console.log(item);
+    let a = this.information;
+    let len = a.length;
+    for(var i = 0;i<len;i++){
+      if(a[i].name == item.name){
+        let b = a[i].children;
+        let len0 = b.length;
+        for(var j = 0;j<len0;j++){
+          if(b[j].name == child.name){
+           let f = b[j].children
+           let g = f.length
+           for(var i = 0; i<g;i++){
+             if (f[i].name===item0.name){
+               f.splice(i,1);
+               firebase.database().ref("/plan/" + this.gname).set(this.information);
+               return
+             }
+           }
+          }
+        }
+      }
+    }
   }
 
   toggleSection(i) {

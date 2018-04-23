@@ -149,11 +149,7 @@ var PlanPage = /** @class */ (function () {
                     var len0 = b.length;
                     for (var j = 0; j < len0; j++) {
                         if (b[j].children === "em") {
-                            b[j].children = [{
-                                    name: "Cycling",
-                                    information: "blah",
-                                    price: "1h"
-                                }];
+                            b[j].children = [];
                         }
                         console.log(b[j]);
                     }
@@ -275,6 +271,27 @@ var PlanPage = /** @class */ (function () {
         console.log(item0);
         console.log(child);
         console.log(item);
+        var a = this.information;
+        var len = a.length;
+        for (var i = 0; i < len; i++) {
+            if (a[i].name == item.name) {
+                var b = a[i].children;
+                var len0 = b.length;
+                for (var j = 0; j < len0; j++) {
+                    if (b[j].name == child.name) {
+                        var f = b[j].children;
+                        var g = f.length;
+                        for (var i = 0; i < g; i++) {
+                            if (f[i].name === item0.name) {
+                                f.splice(i, 1);
+                                __WEBPACK_IMPORTED_MODULE_5_firebase___default.a.database().ref("/plan/" + this.gname).set(this.information);
+                                return;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     };
     PlanPage.prototype.toggleSection = function (i) {
         this.information[i].open = !this.information[i].open;
@@ -745,10 +762,9 @@ var StudentPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-student',template:/*ion-inline-start:"/Users/yanfengyao/projects/gittest/src/pages/student/student.html"*/'<!--\n  Generated template for the StudentPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>coach</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-list>\n    <ion-item-sliding *ngFor="let student of students">\n      <ion-item>\n        {{student}}\n      </ion-item>\n      <ion-item-options>\n        <button ion-button color="secondary" (click)="viewProfile(student)">profile</button>\n        <button ion-button color="secondary" (click)="viewPlan(student)">plan</button>\n      </ion-item-options>\n  </ion-item-sliding>\n\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/yanfengyao/projects/gittest/src/pages/student/student.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_auth__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_auth__["a" /* AuthService */]) === "function" && _c || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__services_auth__["a" /* AuthService */]])
     ], StudentPage);
     return StudentPage;
-    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=student.js.map
@@ -1046,11 +1062,11 @@ webpackEmptyAsyncContext.id = 217;
 
 var map = {
 	"../pages/coach-dt/coach-dt.module": [
-		1032,
+		1031,
 		0
 	],
 	"../pages/coach/coach.module": [
-		1031,
+		1032,
 		5
 	],
 	"../pages/dashboard/dashboard.module": [
@@ -1503,8 +1519,8 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* MyApp */], {}, {
                     links: [
-                        { loadChildren: '../pages/coach/coach.module#CoachPageModule', name: 'CoachPage', segment: 'coach', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/coach-dt/coach-dt.module#CoachDtPageModule', name: 'CoachDtPage', segment: 'coach-dt', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/coach/coach.module#CoachPageModule', name: 'CoachPage', segment: 'coach', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/dashboard/dashboard.module#DashboardPageModule', name: 'DashboardPage', segment: 'dashboard', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/detail/detail.module#DetailPageModule', name: 'DetailPage', segment: 'detail', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/student/student.module#StudentPageModule', name: 'StudentPage', segment: 'student', priority: 'low', defaultHistory: [] },
