@@ -23,7 +23,6 @@ export class PlanPage {
   constructor(public navCtrl: NavController, private http: Http, private auth: AuthService,
     private navm: NavParams,private popc:PopoverController) {
     this.gname = this.navm.data;
-    console.log(this.navm.data);
     if (typeof (this.gname) === "string") {
       this.editable = true;
       firebase.database().ref("/plan/" + this.gname).once("value").then((snapshot) => {
@@ -36,13 +35,10 @@ export class PlanPage {
             if (b[j].children === "em") {
               b[j].children = [];
             }
-            console.log(b[j]);
           }
         }
-        console.log(a);
         this.information = a;
       });
-      console.log(this.information)
     } else {
       this.editable = false;
       if (this.auth.getAuthenticatedUser()) {
@@ -61,20 +57,16 @@ export class PlanPage {
                 b[j].children = [];
               } else {
               }
-              console.log(b[j]);
             }
           }
-          console.log(a);
           this.information = a;
         });
-        console.log(this.information)
       });
     }
   }
 
   ionViewDidLoad(){
     this.gname = this.navm.data;
-    console.log(this.navm.data);
     if (typeof (this.gname) === "string") {
       firebase.database().ref("/plan/" + this.gname).on("value",(snapshot) => {
         let a = snapshot.val();
@@ -86,13 +78,10 @@ export class PlanPage {
             if (b[j].children === "em") {
               b[j].children = [];
             }
-            console.log(b[j]);
           }
         }
-        console.log(a);
         this.information = a;
       });
-      console.log(this.information)
     } else {
       if (this.auth.getAuthenticatedUser()) {
         this.UserId = this.auth.getAuthenticatedUser().uid;
@@ -101,9 +90,7 @@ export class PlanPage {
         this.name = snapshot.val().userbasic.fname
         firebase.database().ref("/plan/" + this.name).on("value",(snapshot) => {
           let a = snapshot.val();
-          console.log(a);
           let len = a.length;
-          console.log(len)
           for (var i = 0; i < len; i++) {
             let b = a[i].children;
             let len0 = b.length;
@@ -112,13 +99,10 @@ export class PlanPage {
                 b[j].children = [];
               } else {
               }
-              console.log(b[j]);
             }
           }
-          console.log(a);
           this.information = a;
         });
-        console.log(this.information)
       });
     }
   }
@@ -128,7 +112,6 @@ export class PlanPage {
     pop.present({ ev: event });
     pop.onDidDismiss(data=>{
      exer=data;
-     console.log(exer);
      let a = this.information;
     let len = a.length;
     for(var i = 0;i<len;i++){
@@ -144,13 +127,8 @@ export class PlanPage {
     }
     firebase.database().ref("/plan/" + this.gname).set(this.information);
     });
-     console.log(item);
-     console.log(child);
   }
   delete(item0, child, item) {
-    console.log(item0);
-    console.log(child);
-    console.log(item);
     let a = this.information;
     let len = a.length;
     for(var i = 0;i<len;i++){
@@ -159,8 +137,8 @@ export class PlanPage {
         let len0 = b.length;
         for(var j = 0;j<len0;j++){
           if(b[j].name == child.name){
-           let f = b[j].children
-           let g = f.length
+           let f = b[j].children;
+           let g = f.length;
            for(var i = 0; i<g;i++){
              if (f[i].name===item0.name){
                f.splice(i,1);

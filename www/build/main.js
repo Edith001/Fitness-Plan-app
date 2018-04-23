@@ -138,7 +138,6 @@ var PlanPage = /** @class */ (function () {
         this.navm = navm;
         this.popc = popc;
         this.gname = this.navm.data;
-        console.log(this.navm.data);
         if (typeof (this.gname) === "string") {
             this.editable = true;
             __WEBPACK_IMPORTED_MODULE_5_firebase___default.a.database().ref("/plan/" + this.gname).once("value").then(function (snapshot) {
@@ -151,13 +150,10 @@ var PlanPage = /** @class */ (function () {
                         if (b[j].children === "em") {
                             b[j].children = [];
                         }
-                        console.log(b[j]);
                     }
                 }
-                console.log(a);
                 _this.information = a;
             });
-            console.log(this.information);
         }
         else {
             this.editable = false;
@@ -178,20 +174,16 @@ var PlanPage = /** @class */ (function () {
                             }
                             else {
                             }
-                            console.log(b[j]);
                         }
                     }
-                    console.log(a);
                     _this.information = a;
                 });
-                console.log(_this.information);
             });
         }
     }
     PlanPage.prototype.ionViewDidLoad = function () {
         var _this = this;
         this.gname = this.navm.data;
-        console.log(this.navm.data);
         if (typeof (this.gname) === "string") {
             __WEBPACK_IMPORTED_MODULE_5_firebase___default.a.database().ref("/plan/" + this.gname).on("value", function (snapshot) {
                 var a = snapshot.val();
@@ -203,13 +195,10 @@ var PlanPage = /** @class */ (function () {
                         if (b[j].children === "em") {
                             b[j].children = [];
                         }
-                        console.log(b[j]);
                     }
                 }
-                console.log(a);
                 _this.information = a;
             });
-            console.log(this.information);
         }
         else {
             if (this.auth.getAuthenticatedUser()) {
@@ -219,9 +208,7 @@ var PlanPage = /** @class */ (function () {
                 _this.name = snapshot.val().userbasic.fname;
                 __WEBPACK_IMPORTED_MODULE_5_firebase___default.a.database().ref("/plan/" + _this.name).on("value", function (snapshot) {
                     var a = snapshot.val();
-                    console.log(a);
                     var len = a.length;
-                    console.log(len);
                     for (var i = 0; i < len; i++) {
                         var b = a[i].children;
                         var len0 = b.length;
@@ -231,13 +218,10 @@ var PlanPage = /** @class */ (function () {
                             }
                             else {
                             }
-                            console.log(b[j]);
                         }
                     }
-                    console.log(a);
                     _this.information = a;
                 });
-                console.log(_this.information);
             });
         }
     };
@@ -248,7 +232,6 @@ var PlanPage = /** @class */ (function () {
         pop.present({ ev: event });
         pop.onDidDismiss(function (data) {
             exer = data;
-            console.log(exer);
             var a = _this.information;
             var len = a.length;
             for (var i = 0; i < len; i++) {
@@ -264,13 +247,8 @@ var PlanPage = /** @class */ (function () {
             }
             __WEBPACK_IMPORTED_MODULE_5_firebase___default.a.database().ref("/plan/" + _this.gname).set(_this.information);
         });
-        console.log(item);
-        console.log(child);
     };
     PlanPage.prototype.delete = function (item0, child, item) {
-        console.log(item0);
-        console.log(child);
-        console.log(item);
         var a = this.information;
         var len = a.length;
         for (var i = 0; i < len; i++) {
@@ -306,10 +284,10 @@ var PlanPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-plan',template:/*ion-inline-start:"/Users/yanfengyao/projects/gittest/src/pages/plan/plan.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Training Plan\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-list class="accordion-list">\n    <!-- First Level -->\n    <ion-list-header *ngFor="let item of information; let i = index" no-lines no-padding>\n      <!-- Toggle Button -->\n      <button ion-item (click)="toggleSection(i)" detail-none [ngClass]="{\'section-active\': item.open, \'section\': !item.open}">\n        <ion-icon item-left name="arrow-forward" *ngIf="!item.open"></ion-icon>\n        <ion-icon item-left name="arrow-down" *ngIf="item.open"></ion-icon>\n          {{ item.name }}\n      </button>\n\n      <ion-list *ngIf="item.children && item.open" no-lines>\n        <!-- Second Level -->\n        <ion-list-header *ngFor="let child of item.children; let j = index" no-padding>\n          <!-- Toggle Button -->\n          <ion-item class="child"> \n          <button ion-item (click)="toggleItem(i, j)" *ngIf="child.children" class="child" detail-none>\n            <ion-icon item-left name="add" *ngIf="!child.open"></ion-icon>\n            <ion-icon item-left name="close" *ngIf="child.open"></ion-icon>\n            {{ child.name }}\n          </button>\n          <button ion-button outline item-end (click)="add(item,child)" *ngIf="!child.open && editable">add</button>\n        </ion-item>\n          <!-- Direct Add Button as Fallback -->\n          <!-- <ion-item *ngIf="!child.children" ion-item detail-none class="child-item" text-wrap>\n            <h2>{{ child.name }}</h2>\n            <p text-lowercase>{{ child.information }}</p>\n            <button ion-button outline item-end (click)="buyItem(child)">{{ child.price }}</button>\n          </ion-item> -->\n\n          <ion-list *ngIf="child.children && child.open">\n            <!-- Third Level -->\n            <ion-item-sliding *ngFor="let item0 of child.children; let k = index">\n            <ion-item detail-none class="child-item" text-wrap>\n              <h2>{{ item0.name }}</h2>\n              <p text-lowercase>{{ item0.information }}</p>\n              <!-- Direct Add Button -->\n              <button ion-button outline item-end (click)="gotoDetail(item0)">{{ item0.price }}</button>\n            </ion-item>\n            <ion-item-options>\n              <button ion-button color ="secondary" (click)="delete(item0,child,item)" *ngIf = "editable">\n              <ion-icon name="trash">\n              </ion-icon>\n              </button>\n            </ion-item-options>\n          </ion-item-sliding>\n          </ion-list>\n\n        </ion-list-header>\n      </ion-list>\n\n    </ion-list-header>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/yanfengyao/projects/gittest/src/pages/plan/plan.html"*/
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Http */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_6__services_auth__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__services_auth__["a" /* AuthService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* PopoverController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* PopoverController */]) === "function" && _e || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Http */], __WEBPACK_IMPORTED_MODULE_6__services_auth__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* PopoverController */]])
     ], PlanPage);
     return PlanPage;
-    var _a, _b, _c, _d, _e;
 }());
 
 //# sourceMappingURL=plan.js.map
