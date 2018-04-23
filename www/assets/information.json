@@ -7,11 +7,6 @@
                   "name": "Basics",
                   "children": [
                       {
-                          "name": "Jogging",
-                          "information": "blah",
-                          "price": "10km"
-                      },
-                      {
                           "name": "Walking",
                           "information": "blah",
                           "price": "5k"

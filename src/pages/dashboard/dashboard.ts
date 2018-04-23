@@ -29,12 +29,12 @@ export class DashboardPage {
         gender:"",
         Birthday:new Date(),
         profession:"",
-        heightfeet:0,
-        heightinch:0,
-        weight:0,
-        traininghistory:false,
-        professional:false,
-        isCoach:false
+        heightfeet:"0",
+        heightinch:"0",
+        weight:"0",
+        traininghistory:"false",
+        professional:"false",
+        isCoach:"false"
       };
   constructor(public navCtrl: NavController, public navParams: NavParams,
   private datam:DataManager,private auth:AuthService,

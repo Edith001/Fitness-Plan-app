@@ -19,7 +19,9 @@ export class HomePage {
   UserId:any;
 
   constructor(public navCtrl: NavController,private auth: AuthService) {
+    if(this.auth.getAuthenticatedUser()){
     this.UserId=this.auth.getAuthenticatedUser().uid;
+    };
     // firebase.database().ref('/exercise').child('bob').set({
     //   hg:"name",
     //   tg:"namm"

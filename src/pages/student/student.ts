@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import firebase from 'firebase'
+import firebase from 'firebase';
 import {AuthService} from '../../services/auth';
+import {PlanPage} from '../plan/plan'
+
 /**
  * Generated class for the StudentPage page.
  *
@@ -16,23 +18,37 @@ import {AuthService} from '../../services/auth';
 })
 export class StudentPage {
 
-  students="";
-  name = ""
-constructor(public navCtrl: NavController, public navParams: NavParams,private auth:AuthService) {
+  students = [];
+  name = "";
+  constructor(public navCtrl: NavController, public navParams: NavParams,private auth:AuthService) {
   const userId = this.auth.getAuthenticatedUser().uid;
   firebase.database().ref('/' + userId).once('value').then((snapshot)=>{
-     this.name = snapshot.val().userbasic.fname
-
+     this.name = snapshot.val().userbasic.fname;
   })
   firebase.database().ref('/coaches/'+this.name).once('value').then((snapshot)=>{
     const a = snapshot.val();
-    Object.keys(a).map(key=>{this.students=a[key]});
+    var b;
+    Object.keys(a).map((key)=>{
+       console.log(key);
+       b = a[key];
+    }); 
+    console.log(b);
+    if(b.first!=="stu1"){
+    this.students.push(b.first);
+    }
+    if(b.second!=="stu2"){
+    this.students.push(b.second);
+    }
+    if(b.third!=="stu3"){
+    this.students.push(b.third);
+    }
     //console.log(this.coaches);
   })
 
 
 }
-addPlan(item){
-  //firebase.database().ref("/coaches/"+item).set(this.name);
+viewPlan(item){
+  console.log(item);
+  this.navCtrl.push(PlanPage,item)
 }
 }

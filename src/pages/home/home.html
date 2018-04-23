@@ -18,7 +18,7 @@
     <button ion-button (click)= "gotoGraph()">
      goto graph
     </button>
-    <button ion-button (click) = "trainPlan()">
+    <button ion-button *ngIf="isStudent" (click) = "trainPlan()">
       training plan
     </button>
     <button ion-button *ngIf="isCoach" (click) = 'Student()'>

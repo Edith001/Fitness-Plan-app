@@ -21,12 +21,14 @@
         <!-- Second Level -->
         <ion-list-header *ngFor="let child of item.children; let j = index" no-padding>
           <!-- Toggle Button -->
+          <ion-item class="child"> 
           <button ion-item (click)="toggleItem(i, j)" *ngIf="child.children" class="child" detail-none>
             <ion-icon item-left name="add" *ngIf="!child.open"></ion-icon>
             <ion-icon item-left name="close" *ngIf="child.open"></ion-icon>
             {{ child.name }}
           </button>
-
+          <button ion-button outline item-end (click)="add(item,child)" *ngIf="!child.open && editable">add</button>
+        </ion-item>
           <!-- Direct Add Button as Fallback -->
           <!-- <ion-item *ngIf="!child.children" ion-item detail-none class="child-item" text-wrap>
             <h2>{{ child.name }}</h2>
@@ -36,12 +38,20 @@
 
           <ion-list *ngIf="child.children && child.open">
             <!-- Third Level -->
-            <ion-item *ngFor="let item of child.children; let k = index" detail-none class="child-item" text-wrap>
-              <h2>{{ item.name }}</h2>
-              <p text-lowercase>{{ item.information }}</p>
+            <ion-item-sliding *ngFor="let item0 of child.children; let k = index">
+            <ion-item detail-none class="child-item" text-wrap>
+              <h2>{{ item0.name }}</h2>
+              <p text-lowercase>{{ item0.information }}</p>
               <!-- Direct Add Button -->
-              <button ion-button outline item-end (click)="gotoDetail(item)">{{ item.price }}</button>
+              <button ion-button outline item-end (click)="gotoDetail(item0)">{{ item0.price }}</button>
             </ion-item>
+            <ion-item-options>
+              <button ion-button color ="secondary" (click)="delete(item0,child,item)" *ngIf = "editable">
+              <ion-icon name="trash">
+              </ion-icon>
+              </button>
+            </ion-item-options>
+          </ion-item-sliding>
           </ion-list>
 
         </ion-list-header>

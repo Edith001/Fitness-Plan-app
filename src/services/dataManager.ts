@@ -18,18 +18,19 @@ export class DataManager{
     }
     getUserBasicInof(){
         if (!this.userBasicInfo){
+            console.log("created an empty one")
             this.userBasicInfo={
                 fname:"",
                 lname:"",
                 gender:"",
                 Birthday:new Date(),
                 profession:"",
-                heightfeet:0,
-                heightinch:0,
-                weight:0,
-                traininghistory:false,
-                professional:false,
-                isCoach:false,
+                heightfeet:"0",
+                heightinch:"0",
+                weight:"0",
+                traininghistory:"false",
+                professional:"false",
+                isCoach:"false",
               }
         }
         return this.userBasicInfo;

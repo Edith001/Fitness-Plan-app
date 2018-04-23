@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {CoachDtPage} from "../coach-dt/coach-dt";
 import firebase from 'firebase'
 import {AuthService} from '../../services/auth';
+import {AlertController} from 'ionic-angular'
 /**
  * Generated class for the CoachPage page.
  *
@@ -18,7 +19,7 @@ import {AuthService} from '../../services/auth';
 export class CoachPage {
     coaches=[];
     name = ""
-  constructor(public navCtrl: NavController, public navParams: NavParams,private auth:AuthService) {
+  constructor(private alertc:AlertController,public navCtrl: NavController, public navParams: NavParams,private auth:AuthService) {
     firebase.database().ref('/coaches').once('value').then((snapshot)=>{
       const a = snapshot.val();
       Object.keys(a).map(key=>{this.coaches.push(key)});
@@ -32,6 +33,51 @@ export class CoachPage {
   }
 
   coachdetail(item){
-    firebase.database().ref("/coaches/"+item).set(this.name);
+    firebase.database().ref("/coaches/"+item).once('value').then((snapshot)=>{
+      console.log("snapshotget")
+      const c = snapshot.val();
+      const allStuts = [];
+      Object.keys(c).map(key=>{
+         allStuts.push(c[key]);
+      });
+      var len = allStuts.length;
+      for(var i = 0; i<len; i++){
+        console.log("in loop");
+        if(allStuts[i]===this.name){
+          const alert = this.alertc.create({
+            title:"Warning!",
+            message:"You can only subscribe to a coach once",
+            buttons:["Ok"]
+          });
+          alert.present();
+          return;
+        }
+      }
+      const a =snapshot.val();
+      if(a.first==="stu1"){
+        console.log("updated1");
+        firebase.database().ref("/coaches/"+item).update({first:this.name});
+        return;
+      }
+      if(a.second==="stu2"){
+        console.log("updated2");
+        firebase.database().ref("/coaches/"+item).update({second:this.name});
+        return;
+      }
+      if(a.third==="stu3"){
+        console.log("updated3");
+        firebase.database().ref("/coaches/"+item).update({third:this.name});
+        return;
+      }
+      const alert0 = this.alertc.create({
+        title:"Sorry",
+        message:"The capacity of this coach is full!",
+        buttons:["Ok"]
+      });
+      alert0.present();
+      return;
+    },(err)=>{
+    });
+    // firebase.database().ref("/coaches/"+item).
   }
 }
