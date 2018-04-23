@@ -27,10 +27,12 @@ export class StudentPage {
   })
   firebase.database().ref('/coaches/'+this.name).once('value').then((snapshot)=>{
     const a = snapshot.val();
+    console.log(a);
     var b;
     Object.keys(a).map((key)=>{
        console.log(key);
        b = a[key];
+       console.log(b)
     }); 
     console.log(b);
     if(b.first!=="stu1"){
@@ -42,7 +44,7 @@ export class StudentPage {
     if(b.third!=="stu3"){
     this.students.push(b.third);
     }
-    //console.log(this.coaches);
+    console.log(this.students);
   })
 
 

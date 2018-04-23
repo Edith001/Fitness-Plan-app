@@ -34,11 +34,7 @@ export class PlanPage {
           let len0 = b.length;
           for (var j = 0; j < len0; j++) {
             if (b[j].children === "em") {
-              b[j].children = [{
-                name: "Cycling",
-                information: "blah",
-                price: "1h"
-              }];
+              b[j].children = [];
             }
             console.log(b[j]);
           }
@@ -88,11 +84,7 @@ export class PlanPage {
           let len0 = b.length;
           for (var j = 0; j < len0; j++) {
             if (b[j].children === "em") {
-              b[j].children = [{
-                name: "Cycling",
-                information: "blah",
-                price: "1h"
-              }];
+              b[j].children = [];
             }
             console.log(b[j]);
           }
@@ -109,7 +101,9 @@ export class PlanPage {
         this.name = snapshot.val().userbasic.fname
         firebase.database().ref("/plan/" + this.name).on("value",(snapshot) => {
           let a = snapshot.val();
+          console.log(a);
           let len = a.length;
+          console.log(len)
           for (var i = 0; i < len; i++) {
             let b = a[i].children;
             let len0 = b.length;
