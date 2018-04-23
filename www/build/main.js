@@ -255,22 +255,26 @@ var PlanPage = /** @class */ (function () {
                 if (a[i].name == item.name) {
                     var b = a[i].children;
                     var len0 = b.length;
+                    console.log(len0);
                     for (var j = 0; j < len0; j++) {
                         if (b[j].name == child.name) {
-                            b[j].children.push(exer);
+                            if (b[j].children) {
+                                b[j].children.push(exer);
+                            }
+                            else {
+                                b[j] = {
+                                    name: child.name,
+                                    children: [exer]
+                                };
+                            }
                         }
                     }
                 }
             }
             __WEBPACK_IMPORTED_MODULE_5_firebase___default.a.database().ref("/plan/" + _this.gname).set(_this.information);
         });
-        console.log(item);
-        console.log(child);
     };
     PlanPage.prototype.delete = function (item0, child, item) {
-        console.log(item0);
-        console.log(child);
-        console.log(item);
         var a = this.information;
         var len = a.length;
         for (var i = 0; i < len; i++) {
@@ -1062,11 +1066,11 @@ webpackEmptyAsyncContext.id = 217;
 
 var map = {
 	"../pages/coach-dt/coach-dt.module": [
-		1031,
+		1032,
 		0
 	],
 	"../pages/coach/coach.module": [
-		1032,
+		1031,
 		5
 	],
 	"../pages/dashboard/dashboard.module": [
@@ -1519,8 +1523,8 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* MyApp */], {}, {
                     links: [
-                        { loadChildren: '../pages/coach-dt/coach-dt.module#CoachDtPageModule', name: 'CoachDtPage', segment: 'coach-dt', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/coach/coach.module#CoachPageModule', name: 'CoachPage', segment: 'coach', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/coach-dt/coach-dt.module#CoachDtPageModule', name: 'CoachDtPage', segment: 'coach-dt', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/dashboard/dashboard.module#DashboardPageModule', name: 'DashboardPage', segment: 'dashboard', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/detail/detail.module#DetailPageModule', name: 'DetailPage', segment: 'detail', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/student/student.module#StudentPageModule', name: 'StudentPage', segment: 'student', priority: 'low', defaultHistory: [] },

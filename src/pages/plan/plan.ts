@@ -8,7 +8,7 @@ import { AuthService } from '../../services/auth';
 import { work } from '../../services/work.interface';
 import {PopPage} from '../pop';
 import {PopoverController} from 'ionic-angular';
- 
+
 @Component({
   selector: 'page-plan',
   templateUrl: 'plan.html'
@@ -135,22 +135,23 @@ export class PlanPage {
       if(a[i].name == item.name){
         let b = a[i].children;
         let len0 = b.length;
+        console.log(len0)
         for(var j = 0;j<len0;j++){
           if(b[j].name == child.name){
-            b[j].children.push(exer);
+            if (b[j].children){
+            b[j].children.push(exer);}
+            else{b[j]={
+              name:child.name,
+              children:[exer]
+            }}
           }
         }
-      }
+    }
     }
     firebase.database().ref("/plan/" + this.gname).set(this.information);
     });
-     console.log(item);
-     console.log(child);
   }
   delete(item0, child, item) {
-    console.log(item0);
-    console.log(child);
-    console.log(item);
     let a = this.information;
     let len = a.length;
     for(var i = 0;i<len;i++){
