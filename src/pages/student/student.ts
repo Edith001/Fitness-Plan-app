@@ -34,7 +34,6 @@ export class StudentPage {
        b = a[key];
        console.log(b)
     }); 
-    console.log(b);
     if(b.first!=="stu1"){
     this.students.push(b.first);
     }
