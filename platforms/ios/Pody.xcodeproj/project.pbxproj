@@ -45,6 +45,7 @@
 		9CDF0BAAE7B14A31B335E301 /* FirebaseInstanceID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58B997664C744EBBBDD49789 /* FirebaseInstanceID.framework */; };
 		9FD26D45B70C43228AED5E9C /* FirebasePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 642F3AD1BD2945F398D36F3C /* FirebasePlugin.m */; };
 		A5DC8967FA1B4AF3891B7093 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 964F5E75B99D4B00B1CD987E /* FBSDKLoginKit.framework */; };
+		A949365420980D74006F080E /* libCordova.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 301BF535109A57CC0062928A /* libCordova.a */; };
 		ABA72F16957544138FA504C4 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BB93DBFD5EE14D0294748E3E /* libz.tbd */; };
 		B2B42EA024D34F968E852126 /* FirebaseNanoPB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A3431FA2CCC4D41AE781953 /* FirebaseNanoPB.framework */; };
 		B3A7DE4E36A24138B9DA7BE7 /* GCDWebServerRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F4CFA6095A4638BC163505 /* GCDWebServerRequest.m */; };
