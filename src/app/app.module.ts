@@ -17,6 +17,7 @@ import { DetailPage } from '../pages/detail/detail';
 import { CoachPage} from '../pages/coach/coach';
 import { StudentPage} from '../pages/student/student';
 import {PopPage} from '../pages/pop';
+import { Facebook } from '@ionic-native/facebook';
 @NgModule({
   declarations: [
     MyApp,
@@ -57,7 +58,8 @@ import {PopPage} from '../pages/pop';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthService,
-    DataManager
+    DataManager,
+    Facebook
   ]
 })
 export class AppModule {}

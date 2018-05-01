@@ -20,7 +20,6 @@
 		2124AB515CB44A59A162D784 /* FirebaseAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9B81CBC29B04F39A3A59BE3 /* FirebaseAuth.framework */; };
 		23A5A62EC8084FB6A98A10EE /* FirebaseCrash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D21880A57CB44EEB5B22396 /* FirebaseCrash.framework */; };
 		28F7AB281AC343CF8622EC36 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6732F315DF3C4B7C9BD5BB3F /* WebKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		301BF552109A68D80062928A /* libCordova.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 301BF535109A57CC0062928A /* libCordova.a */; };
 		302D95F114D2391D003F00A1 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 302D95EF14D2391D003F00A1 /* MainViewController.m */; };
 		302D95F214D2391D003F00A1 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 302D95F014D2391D003F00A1 /* MainViewController.xib */; };
 		3383DE65A0884F798AE960F6 /* GCDWebServerConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1964BBD4514EF1B8369970 /* GCDWebServerConnection.m */; };
@@ -35,12 +34,16 @@
 		6BBC477AF4674E70A213A52D /* CDVViewController+SplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = F9E1D3617CC1468CA90F29BD /* CDVViewController+SplashScreen.m */; };
 		722C773768FC464DBB73E4DC /* GCDWebServerMultiPartFormRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 21681A84D1994A52AF61243E /* GCDWebServerMultiPartFormRequest.m */; };
 		7F94FDC54ABE4D3C938A7D70 /* GCDWebServerURLEncodedFormRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DAD24C7F4C486699EBD2B6 /* GCDWebServerURLEncodedFormRequest.m */; };
+		80EB7CC82D6B4A479A9ED4F8 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7526F3E6EEA8436CBB846574 /* FBSDKShareKit.framework */; };
 		817ED3F9F4A64E42A8C378EF /* GCDWebServerFileResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A7CED392B08948D3BB28AB0E /* GCDWebServerFileResponse.m */; };
 		89AA49A16BE848F4B121F710 /* CDVWKWebViewEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 18538ABC40354C2996EF379C /* CDVWKWebViewEngine.m */; };
 		89C8A573BA4F48C0835BBDEB /* GTMSessionFetcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EF8639B90CE4023B2BEBA4C /* GTMSessionFetcher.framework */; };
 		8B124DA244154207A638D1AE /* CDVSplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = A21C68A1711E438E8B22E415 /* CDVSplashScreen.m */; };
+		997BC33D0FD24B0D85DBBD19 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 209BE708E0E1473CA7274C09 /* Bolts.framework */; };
+		9BA22C26D9ED4B5A8D1ECB43 /* FacebookConnectPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 4202CC8448954EBA8E486584 /* FacebookConnectPlugin.m */; };
 		9CDF0BAAE7B14A31B335E301 /* FirebaseInstanceID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58B997664C744EBBBDD49789 /* FirebaseInstanceID.framework */; };
 		9FD26D45B70C43228AED5E9C /* FirebasePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 642F3AD1BD2945F398D36F3C /* FirebasePlugin.m */; };
+		A5DC8967FA1B4AF3891B7093 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 964F5E75B99D4B00B1CD987E /* FBSDKLoginKit.framework */; };
 		ABA72F16957544138FA504C4 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BB93DBFD5EE14D0294748E3E /* libz.tbd */; };
 		B2B42EA024D34F968E852126 /* FirebaseNanoPB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A3431FA2CCC4D41AE781953 /* FirebaseNanoPB.framework */; };
 		B3A7DE4E36A24138B9DA7BE7 /* GCDWebServerRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F4CFA6095A4638BC163505 /* GCDWebServerRequest.m */; };
@@ -50,6 +53,7 @@
 		D33026B72F4C4BCAA825CE53 /* GCDWebServerFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 029C90D289D944DDBB7B02AC /* GCDWebServerFunctions.m */; };
 		E09FF1B606AD4DEFA6F57886 /* GCDWebServerDataResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E14FE16F1A04C26B8C486FA /* GCDWebServerDataResponse.m */; };
 		E9743324112B46F5B20E6480 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C55A78C0653B4F95BA5FFD34 /* GoogleService-Info.plist */; };
+		F5913D19B37A4144B195AE22 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB651FF5AC244E6580051407 /* FBSDKCoreKit.framework */; };
 		FD54FE521D4E45A9A218E1D7 /* AppDelegate+FirebasePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC5E96C1457411B9286DEFD /* AppDelegate+FirebasePlugin.m */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +93,7 @@
 		1D6058910D05DD3D006BFB54 /* Pody.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pody.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EF8639B90CE4023B2BEBA4C /* GTMSessionFetcher.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = GTMSessionFetcher.framework; path = "Pody/Plugins/cordova-plugin-firebase/GTMSessionFetcher.framework"; sourceTree = "<group>"; };
 		20461B10FB7A47E6BE4F56E6 /* GCDWebServerHTTPStatusCodes.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = GCDWebServerHTTPStatusCodes.h; path = "cordova-plugin-ionic-webview/GCDWebServerHTTPStatusCodes.h"; sourceTree = "<group>"; };
+		209BE708E0E1473CA7274C09 /* Bolts.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "Pody/Plugins/cordova-plugin-facebook4/Bolts.framework"; sourceTree = "<group>"; };
 		20DAD24C7F4C486699EBD2B6 /* GCDWebServerURLEncodedFormRequest.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = GCDWebServerURLEncodedFormRequest.m; path = "cordova-plugin-ionic-webview/GCDWebServerURLEncodedFormRequest.m"; sourceTree = "<group>"; };
 		21681A84D1994A52AF61243E /* GCDWebServerMultiPartFormRequest.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = GCDWebServerMultiPartFormRequest.m; path = "cordova-plugin-ionic-webview/GCDWebServerMultiPartFormRequest.m"; sourceTree = "<group>"; };
 		26E068AF73EC4D239EFD4CED /* AppDelegate+FirebasePlugin.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = "AppDelegate+FirebasePlugin.h"; path = "cordova-plugin-firebase/AppDelegate+FirebasePlugin.h"; sourceTree = "<group>"; };
@@ -109,6 +114,7 @@
 		32CA4F630368D1EE00C91783 /* Pody-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Pody-Prefix.pch"; sourceTree = "<group>"; };
 		3B26EED7DA2D4D2EAE88D329 /* GCDWebServerDataResponse.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = GCDWebServerDataResponse.h; path = "cordova-plugin-ionic-webview/GCDWebServerDataResponse.h"; sourceTree = "<group>"; };
 		41ACE26C382A44168B8FD984 /* GCDWebServer.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = GCDWebServer.m; path = "cordova-plugin-ionic-webview/GCDWebServer.m"; sourceTree = "<group>"; };
+		4202CC8448954EBA8E486584 /* FacebookConnectPlugin.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = FacebookConnectPlugin.m; path = "cordova-plugin-facebook4/FacebookConnectPlugin.m"; sourceTree = "<group>"; };
 		423A9E656D5F4A809A0ABD19 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = "Pody/Plugins/cordova-plugin-firebase/FirebaseAnalytics.framework"; sourceTree = "<group>"; };
 		51685D2DFB6E4CEDB8B7C6C3 /* FirebaseRemoteConfig.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = FirebaseRemoteConfig.framework; path = "Pody/Plugins/cordova-plugin-firebase/FirebaseRemoteConfig.framework"; sourceTree = "<group>"; };
 		51CE6A497F4D41A381C2E3D7 /* CDVWKWebViewUIDelegate.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVWKWebViewUIDelegate.h; path = "cordova-plugin-ionic-webview/CDVWKWebViewUIDelegate.h"; sourceTree = "<group>"; };
@@ -127,11 +133,13 @@
 		6D21880A57CB44EEB5B22396 /* FirebaseCrash.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = FirebaseCrash.framework; path = "Pody/Plugins/cordova-plugin-firebase/FirebaseCrash.framework"; sourceTree = "<group>"; };
 		6DF977CFA2234EDCAD1D181A /* CDVDevice.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVDevice.h; path = "cordova-plugin-device/CDVDevice.h"; sourceTree = "<group>"; };
 		70EF4E1EF3594DF89008DA6A /* GCDWebServerResponse.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = GCDWebServerResponse.m; path = "cordova-plugin-ionic-webview/GCDWebServerResponse.m"; sourceTree = "<group>"; };
+		7526F3E6EEA8436CBB846574 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "Pody/Plugins/cordova-plugin-facebook4/FBSDKShareKit.framework"; sourceTree = "<group>"; };
 		7E14FE16F1A04C26B8C486FA /* GCDWebServerDataResponse.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = GCDWebServerDataResponse.m; path = "cordova-plugin-ionic-webview/GCDWebServerDataResponse.m"; sourceTree = "<group>"; };
 		84BF39072DBA475388084542 /* CDVWKProcessPoolFactory.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVWKProcessPoolFactory.m; path = "cordova-plugin-ionic-webview/CDVWKProcessPoolFactory.m"; sourceTree = "<group>"; };
 		8C6D02509CB44D51B9A3B12A /* GCDWebServerFileRequest.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = GCDWebServerFileRequest.h; path = "cordova-plugin-ionic-webview/GCDWebServerFileRequest.h"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Pody-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Pody-Info.plist"; path = "Pody/Pody-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = SOURCE_ROOT; };
 		9055D7D5B01F4ECCA1D0943B /* GCDWebServerFunctions.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = GCDWebServerFunctions.h; path = "cordova-plugin-ionic-webview/GCDWebServerFunctions.h"; sourceTree = "<group>"; };
+		964F5E75B99D4B00B1CD987E /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "Pody/Plugins/cordova-plugin-facebook4/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
 		991BA1CC0BF5462BB000E951 /* GCDWebServerStreamedResponse.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = GCDWebServerStreamedResponse.m; path = "cordova-plugin-ionic-webview/GCDWebServerStreamedResponse.m"; sourceTree = "<group>"; };
 		9B164AFE42DF41FBBC26B34E /* GCDWebServerStreamedResponse.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = GCDWebServerStreamedResponse.h; path = "cordova-plugin-ionic-webview/GCDWebServerStreamedResponse.h"; sourceTree = "<group>"; };
 		9C2B587C285F42B6B643AD75 /* GCDWebServerErrorResponse.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = GCDWebServerErrorResponse.h; path = "cordova-plugin-ionic-webview/GCDWebServerErrorResponse.h"; sourceTree = "<group>"; };
@@ -147,6 +155,8 @@
 		CEAFCDBA297F4F039CD2B7EB /* CDVDevice.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVDevice.m; path = "cordova-plugin-device/CDVDevice.m"; sourceTree = "<group>"; };
 		CFC73FBFA6F2400FAD4634BB /* GCDWebServerDataRequest.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = GCDWebServerDataRequest.m; path = "cordova-plugin-ionic-webview/GCDWebServerDataRequest.m"; sourceTree = "<group>"; };
 		D4F4CFA6095A4638BC163505 /* GCDWebServerRequest.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = GCDWebServerRequest.m; path = "cordova-plugin-ionic-webview/GCDWebServerRequest.m"; sourceTree = "<group>"; };
+		DB651FF5AC244E6580051407 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "Pody/Plugins/cordova-plugin-facebook4/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
+		E28C53802BE54C66B3DF42D0 /* FacebookConnectPlugin.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = FacebookConnectPlugin.h; path = "cordova-plugin-facebook4/FacebookConnectPlugin.h"; sourceTree = "<group>"; };
 		E9F528CCC52948248372682C /* GCDWebServerErrorResponse.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = GCDWebServerErrorResponse.m; path = "cordova-plugin-ionic-webview/GCDWebServerErrorResponse.m"; sourceTree = "<group>"; };
 		E9F7A9C680CA4B85A1B9FCDA /* Firebase.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = "cordova-plugin-firebase/Firebase.h"; sourceTree = "<group>"; };
 		EA922F066C394891B0A47BB1 /* CDVViewController+SplashScreen.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = "CDVViewController+SplashScreen.h"; path = "cordova-plugin-splashscreen/CDVViewController+SplashScreen.h"; sourceTree = "<group>"; };
@@ -167,7 +177,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				301BF552109A68D80062928A /* libCordova.a in Frameworks */,
 				ABA72F16957544138FA504C4 /* libz.tbd in Frameworks */,
 				54AFF56CE63A483B93717E0C /* FirebaseAnalytics.framework in Frameworks */,
 				5E026668A10B42C281395BAA /* FirebaseCore.framework in Frameworks */,
@@ -182,6 +191,10 @@
 				2124AB515CB44A59A162D784 /* FirebaseAuth.framework in Frameworks */,
 				89C8A573BA4F48C0835BBDEB /* GTMSessionFetcher.framework in Frameworks */,
 				28F7AB281AC343CF8622EC36 /* WebKit.framework in Frameworks */,
+				997BC33D0FD24B0D85DBBD19 /* Bolts.framework in Frameworks */,
+				F5913D19B37A4144B195AE22 /* FBSDKCoreKit.framework in Frameworks */,
+				A5DC8967FA1B4AF3891B7093 /* FBSDKLoginKit.framework in Frameworks */,
+				80EB7CC82D6B4A479A9ED4F8 /* FBSDKShareKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +280,10 @@
 				A9B81CBC29B04F39A3A59BE3 /* FirebaseAuth.framework */,
 				1EF8639B90CE4023B2BEBA4C /* GTMSessionFetcher.framework */,
 				6732F315DF3C4B7C9BD5BB3F /* WebKit.framework */,
+				209BE708E0E1473CA7274C09 /* Bolts.framework */,
+				DB651FF5AC244E6580051407 /* FBSDKCoreKit.framework */,
+				964F5E75B99D4B00B1CD987E /* FBSDKLoginKit.framework */,
+				7526F3E6EEA8436CBB846574 /* FBSDKShareKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -340,6 +357,8 @@
 				F9E1D3617CC1468CA90F29BD /* CDVViewController+SplashScreen.m */,
 				F8CC17C3C31C4932B603C9B4 /* CDVSplashScreen.h */,
 				EA922F066C394891B0A47BB1 /* CDVViewController+SplashScreen.h */,
+				4202CC8448954EBA8E486584 /* FacebookConnectPlugin.m */,
+				E28C53802BE54C66B3DF42D0 /* FacebookConnectPlugin.h */,
 			);
 			name = Plugins;
 			path = Pody/Plugins;
@@ -485,6 +504,7 @@
 				1516651834D54E1C8E6589FD /* GCDWebServerStreamedResponse.m in Sources */,
 				8B124DA244154207A638D1AE /* CDVSplashScreen.m in Sources */,
 				6BBC477AF4674E70A213A52D /* CDVViewController+SplashScreen.m in Sources */,
+				9BA22C26D9ED4B5A8D1ECB43 /* FacebookConnectPlugin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -524,6 +544,10 @@
 					"\"Pody/Plugins/cordova-plugin-firebase\"",
 					"\"Pody/Plugins/cordova-plugin-firebase\"",
 					"\"Pody/Plugins/cordova-plugin-firebase\"",
+					"\"Pody/Plugins/cordova-plugin-facebook4\"",
+					"\"Pody/Plugins/cordova-plugin-facebook4\"",
+					"\"Pody/Plugins/cordova-plugin-facebook4\"",
+					"\"Pody/Plugins/cordova-plugin-facebook4\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -565,6 +589,10 @@
 					"\"Pody/Plugins/cordova-plugin-firebase\"",
 					"\"Pody/Plugins/cordova-plugin-firebase\"",
 					"\"Pody/Plugins/cordova-plugin-firebase\"",
+					"\"Pody/Plugins/cordova-plugin-facebook4\"",
+					"\"Pody/Plugins/cordova-plugin-facebook4\"",
+					"\"Pody/Plugins/cordova-plugin-facebook4\"",
+					"\"Pody/Plugins/cordova-plugin-facebook4\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Pody/Pody-Prefix.pch";

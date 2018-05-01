@@ -35,6 +35,14 @@ module.exports = [
         "id": "cordova-plugin-splashscreen.SplashScreenProxy",
         "pluginId": "cordova-plugin-splashscreen",
         "runs": true
+    },
+    {
+        "file": "plugins/cordova-plugin-facebook4/www/facebook-browser.js",
+        "id": "cordova-plugin-facebook4.FacebookConnectPluginBrowser",
+        "pluginId": "cordova-plugin-facebook4",
+        "clobbers": [
+            "facebookConnectPlugin"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -45,7 +53,8 @@ module.exports.metadata =
     "cordova-plugin-device": "2.0.1",
     "cordova-plugin-splashscreen": "5.0.2",
     "cordova-plugin-ionic-webview": "1.1.19",
-    "cordova-plugin-ionic-keyboard": "2.0.5"
+    "cordova-plugin-ionic-keyboard": "2.0.5",
+    "cordova-plugin-facebook4": "2.0.1"
 }
 // BOTTOM OF METADATA
 });
