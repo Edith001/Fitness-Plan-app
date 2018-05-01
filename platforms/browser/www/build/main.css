@@ -25685,3 +25685,38 @@ page-dashboard .scroll-content {
 page-dashboard ion-card-header {
   font-weight: bold;
 }
+
+page-plan .accordion-list {
+  background: #f4f4f4;
+  height: 100%;
+}
+
+page-plan .section {
+  background: #fff;
+  color: #000;
+  margin-bottom: 4px;
+}
+
+page-plan .section-active {
+  background: #ffc400;
+  color: #fff;
+}
+
+page-plan .child {
+  background: #e8e7e6;
+  color: #000;
+  margin-bottom: 4px;
+}
+
+page-plan .child-item {
+  background: #f3f2f1;
+  padding: 10px;
+}
+
+page-plan .label {
+  margin: 0px;
+}
+
+page-plan .list {
+  margin-bottom: 4px;
+}
