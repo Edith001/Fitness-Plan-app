@@ -716,18 +716,21 @@ var StudentPage = /** @class */ (function () {
         this.students = [];
         this.name = "";
         var userId = this.auth.getAuthenticatedUser().uid;
-        __WEBPACK_IMPORTED_MODULE_2_firebase___default.a.database().ref('/' + userId).once('value').then(function (snapshot) {
-            _this.name = snapshot.val().userbasic.fname;
-        });
-        __WEBPACK_IMPORTED_MODULE_2_firebase___default.a.database().ref('/coaches/' + this.name).once('value').then(function (snapshot) {
+        __WEBPACK_IMPORTED_MODULE_2_firebase___default.a.database().ref('/' + userId + "/").once('value').then(function (snapshot) {
+            console.log(snapshot.val());
             var a = snapshot.val();
-            console.log(a);
-            var b;
             Object.keys(a).map(function (key) {
-                console.log(key);
-                b = a[key];
-                console.log(b);
+                var b = a[key];
+                _this.name = b.fname;
             });
+        });
+    }
+    StudentPage.prototype.ionViewDidLoad = function () {
+        var _this = this;
+        console.log(this.name);
+        __WEBPACK_IMPORTED_MODULE_2_firebase___default.a.database().ref('/coaches/').child(this.name).once('value').then(function (snapshot) {
+            var b = snapshot.val();
+            console.log(b);
             if (b.first !== "stu1") {
                 _this.students.push(b.first);
             }
@@ -739,9 +742,8 @@ var StudentPage = /** @class */ (function () {
             }
             console.log(_this.students);
         });
-    }
+    };
     StudentPage.prototype.viewPlan = function (item) {
-        console.log(item);
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__plan_plan__["a" /* PlanPage */], item);
     };
     StudentPage = __decorate([

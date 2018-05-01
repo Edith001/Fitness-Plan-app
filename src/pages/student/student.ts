@@ -22,18 +22,21 @@ export class StudentPage {
   name = "";
   constructor(public navCtrl: NavController, public navParams: NavParams,private auth:AuthService) {
   const userId = this.auth.getAuthenticatedUser().uid;
-  firebase.database().ref('/' + userId).once('value').then((snapshot)=>{
-     this.name = snapshot.val().userbasic.fname;
-  })
-  firebase.database().ref('/coaches/'+this.name).once('value').then((snapshot)=>{
-    const a = snapshot.val();
-    console.log(a);
-    var b;
-    Object.keys(a).map((key)=>{
-       console.log(key);
-       b = a[key];
-       console.log(b)
-    }); 
+  firebase.database().ref('/' + userId+"/").once('value').then((snapshot)=>{
+    console.log(snapshot.val());
+    let a = snapshot.val();
+    Object.keys(a).map(key=>{
+      let b = a[key];
+      this.name=b.fname;
+    });
+    });
+  }
+    ionViewDidLoad(){
+    console.log(this.name);
+    firebase.database().ref('/coaches/').child(this.name).once('value').then((snapshot)=>{
+    const b = snapshot.val();
+    console.log(b);
+    
     if(b.first!=="stu1"){
     this.students.push(b.first);
     }
@@ -49,7 +52,6 @@ export class StudentPage {
 
 }
 viewPlan(item){
-  console.log(item);
   this.navCtrl.push(PlanPage,item)
 }
 }
