@@ -125,7 +125,7 @@ export class PlanPage {
             b[j].children.push(exer);}
             else{b[j]={
               name:child.name,
-              children:[exer]
+              children:[exer],
             }}
           }
         }
@@ -165,7 +165,13 @@ export class PlanPage {
   toggleItem(i, j) {
     this.information[i].children[j].open = !this.information[i].children[j].open;
   }
-  gotoDetail(item: any) {
-    this.navCtrl.push(DetailPage, item);
+  gotoDetail(a:any,b:any,c:any) {
+    console.log(a);
+    console.log(b);
+    console.log(c);
+    console.log(this.name);
+    console.log(this.gname);
+
+    this.navCtrl.push(DetailPage, {day:c,basic:b,work:a,name:this.name,gname:this.gname});
   }
 }

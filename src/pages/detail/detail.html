@@ -23,12 +23,12 @@
         {{Accomplishment}}
         </ion-col>
       </ion-item>
-      <ion-item (click)="update()">
-          <ion-range min="20" max="80" step="2" [(ngModel)]="Accomplishment">
+      <ion-item >
+          <ion-range min="0" max="100" step="2" [(ngModel)]="Accomplishment">
             <ion-icon small range-left name="bicycle"></ion-icon>
             <ion-icon range-right name="bicycle"></ion-icon>
           </ion-range>
-        </ion-item>       
+        </ion-item>
   </ion-list>
   <ion-card>
     <ion-card-header>
@@ -38,5 +38,10 @@
       {{item.information}}
     </ion-card-content>
   </ion-card>
+  <ion-item>
+    <button ion-button full round (click)="update()">
+      update
+    </button>
+  </ion-item>
 
 </ion-content>
