@@ -140,7 +140,7 @@ export class UserInfoPage {
         l.dismiss();
         if(this.datam.getUserBasicInof()){
           this.fname=this.datam.getUserBasicInof().fname;
-          this.lname=this.datam.getUserBasicInof().fname;
+          this.lname=this.datam.getUserBasicInof().lname;
           this.gender=this.datam.getUserBasicInof().gender;
           this.Birthday=this.datam.getUserBasicInof().Birthday;
           this.profession=this.datam.getUserBasicInof().profession;

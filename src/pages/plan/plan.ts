@@ -45,7 +45,7 @@ export class PlanPage {
         this.UserId = this.auth.getAuthenticatedUser().uid;
       }
       firebase.database().ref('/' + this.UserId).once('value').then((snapshot) => {
-        this.name = snapshot.val().userbasic.fname
+        this.name = snapshot.val().userbasic.lname
         firebase.database().ref("/plan/" + this.name).once("value").then((snapshot) => {
           let a = snapshot.val();
           let len = a.length;
@@ -87,7 +87,7 @@ export class PlanPage {
         this.UserId = this.auth.getAuthenticatedUser().uid;
       }
       firebase.database().ref('/' + this.UserId).once('value').then((snapshot) => {
-        this.name = snapshot.val().userbasic.fname
+        this.name = snapshot.val().userbasic.lname
         firebase.database().ref("/plan/" + this.name).on("value",(snapshot) => {
           let a = snapshot.val();
           console.log(a);

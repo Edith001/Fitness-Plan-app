@@ -27,7 +27,7 @@ export class StudentPage {
     let a = snapshot.val();
     Object.keys(a).map(key=>{
       let b = a[key];
-      this.name=b.fname;
+      this.name=b.lname;
     });
     });
   }

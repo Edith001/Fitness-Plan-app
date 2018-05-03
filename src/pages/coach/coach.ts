@@ -27,7 +27,7 @@ export class CoachPage {
     })
     const userId = this.auth.getAuthenticatedUser().uid;
     firebase.database().ref('/' + userId).once('value').then((snapshot)=>{
-       this.name = snapshot.val().userbasic.fname
+       this.name = snapshot.val().userbasic.lname
 
     })
   }

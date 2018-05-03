@@ -161,7 +161,7 @@ var PlanPage = /** @class */ (function () {
                 this.UserId = this.auth.getAuthenticatedUser().uid;
             }
             __WEBPACK_IMPORTED_MODULE_5_firebase___default.a.database().ref('/' + this.UserId).once('value').then(function (snapshot) {
-                _this.name = snapshot.val().userbasic.fname;
+                _this.name = snapshot.val().userbasic.lname;
                 __WEBPACK_IMPORTED_MODULE_5_firebase___default.a.database().ref("/plan/" + _this.name).once("value").then(function (snapshot) {
                     var a = snapshot.val();
                     var len = a.length;
@@ -205,7 +205,7 @@ var PlanPage = /** @class */ (function () {
                 this.UserId = this.auth.getAuthenticatedUser().uid;
             }
             __WEBPACK_IMPORTED_MODULE_5_firebase___default.a.database().ref('/' + this.UserId).once('value').then(function (snapshot) {
-                _this.name = snapshot.val().userbasic.fname;
+                _this.name = snapshot.val().userbasic.lname;
                 __WEBPACK_IMPORTED_MODULE_5_firebase___default.a.database().ref("/plan/" + _this.name).on("value", function (snapshot) {
                     var a = snapshot.val();
                     console.log(a);
@@ -427,7 +427,7 @@ var CoachPage = /** @class */ (function () {
         });
         var userId = this.auth.getAuthenticatedUser().uid;
         __WEBPACK_IMPORTED_MODULE_2_firebase___default.a.database().ref('/' + userId).once('value').then(function (snapshot) {
-            _this.name = snapshot.val().userbasic.fname;
+            _this.name = snapshot.val().userbasic.lname;
         });
     }
     CoachPage.prototype.coachdetail = function (slidingitem, item) {
@@ -587,7 +587,8 @@ var DashboardPage = /** @class */ (function () {
             _this.datam.DLUserBasicInfo(Token).subscribe(function (data) {
                 l.dismiss();
                 _this.userBasicInfo = _this.datam.getUserBasicInof();
-                __WEBPACK_IMPORTED_MODULE_5_firebase___default.a.database().ref("/plan/" + _this.userBasicInfo.fname).once("value").then(function (snapshot) {
+                __WEBPACK_IMPORTED_MODULE_5_firebase___default.a.database().ref("/plan/" + _this.userBasicInfo.lname).once("value").then(function (snapshot) {
+                    console.log(snapshot.val());
                     var a = snapshot.val();
                     var len = a.length;
                     for (var i = 0; i < len; i++) {
@@ -610,7 +611,13 @@ var DashboardPage = /** @class */ (function () {
                         var type = a[i].children;
                         var lennn = type.length;
                         for (var j = 0; j < lennn; j++) {
-                            var work = type[j].children;
+                            var work = void 0;
+                            if (type[j].children) {
+                                work = type[j].children;
+                            }
+                            else {
+                                work = [];
+                            }
                             var lennnn = work.length;
                             for (var k = 0; k < lennnn; k++) {
                                 count++;
@@ -862,7 +869,7 @@ var StudentPage = /** @class */ (function () {
             var a = snapshot.val();
             Object.keys(a).map(function (key) {
                 var b = a[key];
-                _this.name = b.fname;
+                _this.name = b.lname;
             });
         });
     }
@@ -1048,7 +1055,7 @@ var UserInfoPage = /** @class */ (function () {
                     l.dismiss();
                     if (_this.datam.getUserBasicInof()) {
                         _this.fname = _this.datam.getUserBasicInof().fname;
-                        _this.lname = _this.datam.getUserBasicInof().fname;
+                        _this.lname = _this.datam.getUserBasicInof().lname;
                         _this.gender = _this.datam.getUserBasicInof().gender;
                         _this.Birthday = _this.datam.getUserBasicInof().Birthday;
                         _this.profession = _this.datam.getUserBasicInof().profession;

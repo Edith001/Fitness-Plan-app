@@ -56,7 +56,8 @@ export class DashboardPage {
         this.datam.DLUserBasicInfo(Token).subscribe((data)=>{
              l.dismiss();
              this.userBasicInfo=this.datam.getUserBasicInof();
-             firebase.database().ref("/plan/" + this.userBasicInfo.fname).once("value").then((snapshot) => {
+             firebase.database().ref("/plan/" + this.userBasicInfo.lname).once("value").then((snapshot) => {
+               console.log(snapshot.val());
                  let a = snapshot.val();
                  let len = a.length;
                  for (var i = 0; i < len; i++) {
@@ -79,7 +80,12 @@ export class DashboardPage {
                      let type = a[i].children;
                      let lennn = type.length;
                      for(var j = 0; j<lennn;j++){
-                       let work = type[j].children
+                       let work:any;
+                       if(type[j].children){
+                       work = type[j].children
+                       }else{
+                         work = []
+                       }
                        let lennnn = work.length
                        for(var k = 0; k<lennnn;k++){
                          count++;
