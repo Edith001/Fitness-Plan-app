@@ -90,6 +90,7 @@ export class PlanPage {
         this.name = snapshot.val().userbasic.fname
         firebase.database().ref("/plan/" + this.name).on("value",(snapshot) => {
           let a = snapshot.val();
+          console.log(a);
           let len = a.length;
           for (var i = 0; i < len; i++) {
             let b = a[i].children;
@@ -166,12 +167,6 @@ export class PlanPage {
     this.information[i].children[j].open = !this.information[i].children[j].open;
   }
   gotoDetail(a:any,b:any,c:any) {
-    console.log(a);
-    console.log(b);
-    console.log(c);
-    console.log(this.name);
-    console.log(this.gname);
-
     this.navCtrl.push(DetailPage, {day:c,basic:b,work:a,name:this.name,gname:this.gname});
   }
 }

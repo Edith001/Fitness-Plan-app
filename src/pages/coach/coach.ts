@@ -32,7 +32,10 @@ export class CoachPage {
     })
   }
 
-  coachdetail(item){
+  coachdetail(slidingitem,item){
+    console.log(slidingitem)
+    console.log(item)
+    slidingitem.close();
     firebase.database().ref("/coaches/"+item).once('value').then((snapshot)=>{
       console.log("snapshotget")
       const c = snapshot.val();
@@ -57,16 +60,34 @@ export class CoachPage {
       if(a.first==="stu1"){
         console.log("updated1");
         firebase.database().ref("/coaches/"+item).update({first:this.name});
+        const al=this.alertc.create({
+          title:"Success!",
+          message:"you have selected a coach!",
+          buttons:["Ok"]
+        });
+        al.present();
         return;
       }
       if(a.second==="stu2"){
         console.log("updated2");
         firebase.database().ref("/coaches/"+item).update({second:this.name});
+        const al=this.alertc.create({
+          title:"Success!",
+          message:"you have selected a coach!",
+          buttons:["Ok"]
+        });
+        al.present();
         return;
       }
       if(a.third==="stu3"){
         console.log("updated3");
         firebase.database().ref("/coaches/"+item).update({third:this.name});
+        const al=this.alertc.create({
+          title:"Success!",
+          message:"you have selected a coach!",
+          buttons:["Ok"]
+        });
+        al.present();
         return;
       }
       const alert0 = this.alertc.create({

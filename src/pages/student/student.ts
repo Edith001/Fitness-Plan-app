@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ItemSliding } from 'ionic-angular';
 import firebase from 'firebase';
 import {AuthService} from '../../services/auth';
 import {PlanPage} from '../plan/plan'
@@ -51,7 +51,8 @@ export class StudentPage {
 
 
 }
-viewPlan(item){
+viewPlan(sliding:ItemSliding, item){
+  sliding.close();
   this.navCtrl.push(PlanPage,item)
 }
 }

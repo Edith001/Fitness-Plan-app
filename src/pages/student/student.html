@@ -15,13 +15,12 @@
 
 <ion-content padding>
   <ion-list>
-    <ion-item-sliding *ngFor="let student of students">
+    <ion-item-sliding *ngFor="let student of students" #sliding>
       <ion-item>
         {{student}}
       </ion-item>
       <ion-item-options>
-        <button ion-button color="secondary" (click)="viewProfile(student)">profile</button>
-        <button ion-button color="secondary" (click)="viewPlan(student)">plan</button>
+        <button ion-button color="secondary" (click)="viewPlan(sliding,student)">plan</button>
       </ion-item-options>
   </ion-item-sliding>
 

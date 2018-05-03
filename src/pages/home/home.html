@@ -12,21 +12,23 @@
 </ion-header>
 
 <ion-content padding>
-    <button ion-button (click) = "addInfo()">
+  <ion-list>
+    <button ion-button round full color="secondary" (click) = "addInfo()">
       add info
     </button>
-    <button ion-button (click)= "gotoGraph()">
+    <button ion-button round full color="secondary" *ngIf="isStudent" (click)= "gotoGraph()">
      goto graph
     </button>
-    <button ion-button *ngIf="isStudent" (click) = "trainPlan()">
+    <button ion-button round full color="secondary" *ngIf="isStudent" (click) = "trainPlan()">
       training plan
     </button>
-    <button ion-button *ngIf="isCoach" (click) = 'Student()'>
+    <button ion-button round full color="secondary" *ngIf="isCoach" (click) = 'Student()'>
      Your Student
     </button>
-    <button ion-button *ngIf="isStudent" (click) = "Coach()">
+    <button ion-button round full color="secondary" *ngIf="isStudent" (click) = "Coach()">
      select a coach
     </button>
+  </ion-list>
     <!-- <ion-list>
     <ion-item *ngFor='let item of exercise'>
       {{item}}
